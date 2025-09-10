@@ -1,5 +1,5 @@
 # EEG-fNIRs_CLIP
-This is the source code containing the code to process and evaluate the EEG+fNIRs CLIP model from an auditory task proposed by [Steimetzger et al 2022]. This CL task suggest the subject-level clusterization, using both modalities an generating latent projections using UMAP and t-SNE. 
+This is the source code containing the code to process and evaluate an EEG+fNIRs CLIP model from an auditory task involving a simple but large 1-second tone presentation. This Contrastive Learning  (CL) evaluation suggests a well-defined subject-level clusters, using both modalities and generating projections using UMAP and t-SNE.
 
 A peformance evaluated in the [Steimetzger et al 2022](https://www.sciencedirect.com/science/article/pii/S0378595520303403?via%3Dihub) dataset shows a considerable level of performance for HbO pos/neg condition classification based on the following barplots:
 
