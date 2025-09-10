@@ -13,6 +13,5 @@ A cluster representation using the InfoNCE loss (loss) is this. Defining high sl
 
 <img src="https://github.com/user-attachments/assets/33e3e5ec-6de0-4cb2-9e19-ee1110498a91"
      alt="new_Record-ezgif com-video-to-gif-converter"
-     width="600"/>
-     
-![new_Record-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/33e3e5ec-6de0-4cb2-9e19-ee1110498a91)
+     width="1200"
+     height="1000"/>
