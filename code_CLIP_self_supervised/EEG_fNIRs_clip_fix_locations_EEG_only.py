@@ -22,6 +22,8 @@ Notes
 - This is the EEG-only variant; fNIRS is excluded.
 - Shapes: EEG input typically (channels, time), models expect (B, 1, C, T)
 
+python EEG_fNIRs_fix_locations_EEG_only.py <fnirs_selector> <embed_dim> <batch_size> <num_epochs_train> <learning_rate> <temperature> <folding_rate> <interpretability option (2 for ROI based, 3 for GradCAM)> <subject_start> <components_tsne> <n_subs_val> <k_value_self(logarithmic_increase self-supervised)>  <k_value_class(logarithmic_increase classification)> -- keep this invoking command for the subsequent evaluations
+
 """
 
 import sys
