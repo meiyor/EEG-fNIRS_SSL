@@ -2153,8 +2153,6 @@ def CLIP_train(
 
     loss_classifier = nn.CrossEntropyLoss()
 
-    pca = PCA(n_components=15)
-
     for fold_inner, (train_index, val_index) in enumerate(kf.split(dataset_train)):
         for subj in range(subject_start, 20):
             # define here the variables for each subject fold for avoid overwritting on the same subject table report
