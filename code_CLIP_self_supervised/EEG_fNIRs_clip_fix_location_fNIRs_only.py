@@ -8,6 +8,9 @@ the models evaluated in NeuraPClab
 
 Here is the fNIRs only implementation. Take into account the same
 EEG+fNIRs type of execution in the docstring.
+
+python EEG_fNIRs_fix_locations_fNIRs_only.py <fnirs_selector> <embed_dim> <batch_size> <num_epochs_train> <learning_rate> <temperature> <folding_rate> <interpretability option (2 for ROI based, 3 for GradCAM)> <subject_start> <components_tsne> <n_subs_val> <k_value_self(logarithmic_increase self-supervised)>  <k_value_class(logarithmic_increase classification)> -- keep this invoking command for the subsequent evaluations
+
 """
 
 import sys
@@ -1690,8 +1693,6 @@ def CLIP_train(
     column_names_sims_differences = ["epochs", "sims_batch", "sims_batch_after_softmax", "sims_batch_std", "sims_batch_after_softmax_std"]
 
     loss_classifier = nn.CrossEntropyLoss()
-
-    # pca = PCA(n_components=15)
 
     for fold_inner, (train_index, val_index) in enumerate(kf.split(dataset_train)):
         for subj in range(subject_start, 20):
