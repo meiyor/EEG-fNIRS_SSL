@@ -27,7 +27,7 @@
    running the experiment as expected assuring reproducibility.
 
 For executing this function use the following python command
-python EEG_fNIRs_clip_def_cross_val_fixed_chan_remove_COMPLETE_class_subject_out_DEF_DEF_DEF_adv_MIX_more_feat_fix_locations.py <fnirs_selector> <embed_dim> <batch_size> <num_epochs_train> <learning_rate> <temperature> <folding_rate> <interpretability option (2 for ROI based, 3 for GradCAM)> <subject_start> <components_tsne> <n_subs_val> <k_value_self(logarithmic_increase self-supervised)>  <k_value_class(logarithmic_increase classification)> -- keep this invoking command for the subsequent evaluations
+python EEG_fNIRs_fix_locations_EEG_and_fNIRs.py <fnirs_selector> <embed_dim> <batch_size> <num_epochs_train> <learning_rate> <temperature> <folding_rate> <interpretability option (2 for ROI based, 3 for GradCAM)> <subject_start> <components_tsne> <n_subs_val> <k_value_self(logarithmic_increase self-supervised)>  <k_value_class(logarithmic_increase classification)> -- keep this invoking command for the subsequent evaluations
 
 **ALWAYS include all the parameters on the execution!!
 
