@@ -20,6 +20,7 @@
     - Pickle files '../EEG_pre_processed_subject.pkl' and '../EEG_pre_processed.pkl' containing
       lists of condition-specific EEG arrays and subject identifiers.
 
+    ** take into account the new data after applying short channels regression in case you need it
 """
 
 import asrpy
