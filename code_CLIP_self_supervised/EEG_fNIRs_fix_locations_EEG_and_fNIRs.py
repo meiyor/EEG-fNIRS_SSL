@@ -2427,22 +2427,16 @@ def CLIP_train(
                             (torch.cat((feat_train_eeg, feat_train_fnirs), dim=1).detach().cpu().numpy(), torch.cat((feat_val_eeg, feat_val_fnirs), dim=1).detach().cpu().numpy(), torch.cat((feat_test_eeg, feat_test_fnirs), dim=1).detach().cpu().numpy()), axis=0
                         )
                     )
-                    # DO THE UMAP HERE FOR FEATURE EXTRACTION AND CLASSIFICATION!!
-                    features_umap_ALL = umap_map.fit_transform(
-                        np.concatenate(
-                            (torch.cat((feat_train_eeg, feat_train_fnirs), dim=1).detach().cpu().numpy(), torch.cat((feat_val_eeg, feat_val_fnirs), dim=1).detach().cpu().numpy(), torch.cat((feat_test_eeg, feat_test_fnirs), dim=1).detach().cpu().numpy()), axis=0
-                        )
-                    )
+                 
+                    # DO THE UMAP HERE FOR FEATURE EXTRACTION AND CLASSIFICATION!
+                    features_UMAP_train = umap_map.fit_transform(torch.cat((feat_train_eeg, feat_train_fnirs), dim=1).detach().cpu().numpy())
+                    features_UMAP_val = umap_map.transform(torch.cat((feat_val_eeg, feat_val_fnirs), dim=1).detach().cpu().numpy())
+                    features_UMAP_test = umap_map.transform(torch.cat((feat_test_eeg, feat_test_fnirs), dim=1).detach().cpu().numpy())
 
                     # GET THE T-SNE FEATURES HERE!!
                     features_tsne_train = features_tsne_ALL[0 : feat_train_eeg.shape[0], :]
                     features_tsne_val = features_tsne_ALL[feat_train_eeg.shape[0] : feat_train_eeg.shape[0] + feat_val_eeg.shape[0], :]
                     features_tsne_test = features_tsne_ALL[feat_train_eeg.shape[0] + feat_val_eeg.shape[0] : feat_train_eeg.shape[0] + feat_val_eeg.shape[0] + feat_test_eeg.shape[0], :]
-
-                    # GET THE UMAP FEATURES HERE!!
-                    features_UMAP_train = features_umap_ALL[0 : feat_train_eeg.shape[0], :]
-                    features_UMAP_val = features_umap_ALL[feat_train_eeg.shape[0] : feat_train_eeg.shape[0] + feat_val_eeg.shape[0], :]
-                    features_UMAP_test = features_umap_ALL[feat_train_eeg.shape[0] + feat_val_eeg.shape[0] : feat_train_eeg.shape[0] + feat_val_eeg.shape[0] + feat_test_eeg.shape[0], :]
 
                     # plot the tsne features here and save that in the corresponding folder. This plot is related to the stimuli type (i.e Pitch v.s No-Pitch) - tsne
                     plot_tsne_feat(tsne_feat=features_tsne_train, labels=train_labels.detach().cpu().numpy(), title=f"Train t-sne Epoch {epoch + 1}", epoch=str(epoch + 1), suffix="train", folder_name=folder_name_save, class_value="stimulus type", subj=subj)
