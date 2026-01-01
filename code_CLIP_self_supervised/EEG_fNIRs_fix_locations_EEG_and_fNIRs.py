@@ -2421,7 +2421,7 @@ def CLIP_train(
 
                 # do here the downstream task evaluations
                 if (epoch + 1) % 10 == 0 or epoch + 1 == 1:
-                    # DO THE TSNET FIT TRANSFORM HERE!! make this for sharing the same embedding space in tsne!!! ADD ALL THE TRIALS IN THE SAME MAPPING!!
+                    # DO THE TSNET FIT TRANSFORM HERE!! make this for sharing the same embedding space in tsne!!! ADD ALL THE TRIALS IN THE SAME MAPPING!! JUST FOR VISUALIZATION NOT FOR TRAINING!! THIS IS STOCHASTIC!!!
                     features_tsne_ALL = tsne_map.fit_transform(
                         np.concatenate(
                             (torch.cat((feat_train_eeg, feat_train_fnirs), dim=1).detach().cpu().numpy(), torch.cat((feat_val_eeg, feat_val_fnirs), dim=1).detach().cpu().numpy(), torch.cat((feat_test_eeg, feat_test_fnirs), dim=1).detach().cpu().numpy()), axis=0
