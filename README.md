@@ -11,14 +11,14 @@ A peformance evaluated in the [Steimetzger et al 2022] dataset described in the 
 
 A cluster representation using the InfoNCE loss (loss) is this. Defining high slihoutte and normalized mutual-information (MI) scores having both modalities
 
-<img src="https://github.com/meiyor/EEG-fNIRS_CLIP/blob/main/gifs/new_record_baseline-ezgif.com-video-to-gif-converter.gif"
+<img src="https://github.com/meiyor/EEG-fNIRS_SSL/blob/main/gifs/new_Record-ezgif.com-video-to-gif-converter.gif"
      alt="baseline with just infoNCE loss"
      width="1200"
      height="1000"/>
      
 And after re-writing the lose in a semi-supervised way leaving subject_k features out of the training we obtain the following, with a better separability between conditions.
 
-<img src="https://github.com/meiyor/EEG-fNIRS_CLIP/blob/main/gifs/new_Record-ezgif.com-video-to-gif-converter.gif"
-     alt="cluster showing better separability between conditions (rewriting loss)"
+<img src="https://github.com/meiyor/EEG-fNIRS_SSL/blob/main/gifs/new_Record-ezgif.com-video-to-gif-converter.gif"
+     alt="cluster showing better separability between conditions (rewriting loss in semi-supervised way)"
      width="1200"
      height="1000"/>
