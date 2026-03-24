@@ -1,4 +1,4 @@
-# EEG-fNIRs_CLIP
+# EEG-fNIRs Self-Supervised Learning Evaluation
 This is the source code containing the code to process and evaluate an EEG+fNIRs CLIP model from an auditory task involving a simple but large 1-second tone presentation. This Contrastive Learning  (CL) evaluation suggests a well-defined subject-level clusters, using both modalities and generating projections using UMAP and t-SNE.
 
 A peformance evaluated in the [Steimetzger et al 2022] dataset described in the paper titled [Auditory cortex activity measured using functional near-infrared spectroscopy (fNIRS) appears to be susceptible to masking by cortical blood stealing](https://www.sciencedirect.com/science/article/pii/S0378595520303403?via%3Dihub) After evaluating this dataset using a Multimodal EEG+fNIRs CLIP type of model we obtained a considerable level of performance for HbO postive/negative condition classification. The following barplots shows the average **Accuracy**, **Specificity**, and **Sensitivity** for the HbO postive/negative condition classification.
